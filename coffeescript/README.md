@@ -1,7 +1,7 @@
 CoffeeScript translate
 ===========
 
-Ttanslate the CoffeeScript's official website.
+Translate the CoffeeScript's Official Website.
 
 Sence
 ===========
