@@ -95,9 +95,8 @@
     <span class="bookmark" id="top"></span>
 
     <p>
-      <b>CoffeeScript is a little language that compiles into JavaScript.</b>
-      Underneath that awkward Java-esque patina, JavaScript has always had
-      a gorgeous heart. CoffeeScript is an attempt to expose
+      <b>CoffeeScript是一个用于编译JavaScript的小型语言.</b>
+     虽然在尴尬的Java衍生者（Java-esque）的名义之下, JavaScript却保持着它金子般的本质。 CoffeeScript尝试着用一种简单的方式expose
       the good parts of JavaScript in a simple way.
     </p>
 
@@ -1872,17 +1871,12 @@ hi = function() {
     <p>
       <span id="switch" class="bookmark"></span>
       <b class="header">Switch/When/Else</b>
-      <b>Switch</b> statements in JavaScript are a bit awkward. You need to
-      remember to <b>break</b> at the end of every <b>case</b> statement to
-      avoid accidentally falling through to the default case.
-      CoffeeScript prevents accidental fall-through, and can convert the <tt>switch</tt>
-      into a returnable, assignable expression. The format is: <tt>switch</tt> condition,
-      <tt>when</tt> clauses, <tt>else</tt> the default case.
+      <b>Switch</b>语句在JavaScript里有点笨拙.你必须要记得在每个<b>case</b>语句后加上<b>break</b>结束语句，以免在默认情况下，错误地执行了下一个语句。
+      CoffeeScript可以防止意外通过，分配好表达式,并让<tt>switch</tt>转换到前一个语句.其格式是: <tt>switch</tt>为条件,
+      <tt>when</tt>条件成立时执行, <tt>else</tt>条件不成立时执行.
     </p>
     <p>
-      As in Ruby, <b>switch</b> statements in CoffeeScript can take multiple
-      values for each <b>when</b> clause. If any of the values match, the clause
-      runs.
+      在Ruby中, CoffeeScript的<b>switch</b>语句在不同的<b>when</b>子语句中可以有不同的值。如果有匹配的值,该对应的语句将会运行.
     </p>
     <div class="code"><pre class="idle"><span class="Keyword">switch</span> day
   <span class="Keyword">when</span> <span class="String"><span class="String">"</span>Mon<span class="String">"</span></span> <span class="Keyword">then</span> go work
@@ -1917,10 +1911,10 @@ hi = function() {
   <span class="Keyword">default</span>:
     <span class="LibraryFunction">go</span>(work);
 }
-</pre><script>window.example32 = "switch day\n  when \"Mon\" then go work\n  when \"Tue\" then go relax\n  when \"Thu\" then go iceFishing\n  when \"Fri\", \"Sat\"\n    if day is bingoDay\n      go bingo\n      go dancing\n  when \"Sun\" then go church\n  else go work"</script><div class="minibutton load" onclick="javascript: loadConsole(example32);">load</div><br class="clear"></div>
+</pre><script>window.example32 = "switch day\n  when \"Mon\" then go work\n  when \"Tue\" then go relax\n  when \"Thu\" then go iceFishing\n  when \"Fri\", \"Sat\"\n    if day is bingoDay\n      go bingo\n      go dancing\n  when \"Sun\" then go church\n  else go work"</script><div class="minibutton load" onclick="javascript: loadConsole(example32);">加载</div><br class="clear"></div>
 
     <p>
-      Switch statements can also be used without a control expression, turning them in to a cleaner alternative to if/else chains.
+      Switch语句也可以用来控制表达式 ,替代if/else.
     </p>
     <div class="code"><pre class="idle">score <span class="Keyword">=</span> <span class="Number">76</span>
 grade <span class="Keyword">=</span> <span class="Keyword">switch</span>
@@ -1948,13 +1942,12 @@ grade <span class="Keyword">=</span> (<span class="Storage">function</span>() {
       <span class="Keyword">return</span> <span class="String"><span class="String">'</span>A<span class="String">'</span></span>;
   }
 })();
-</pre><script>window.example33 = "score = 76\ngrade = switch\n  when score < 60 then 'F'\n  when score < 70 then 'D'\n  when score < 80 then 'C'\n  when score < 90 then 'B'\n  else 'A'\n# grade == 'C'\n"</script><div class="minibutton load" onclick="javascript: loadConsole(example33);">load</div><br class="clear"></div>
+</pre><script>window.example33 = "score = 76\ngrade = switch\n  when score < 60 then 'F'\n  when score < 70 then 'D'\n  when score < 80 then 'C'\n  when score < 90 then 'B'\n  else 'A'\n# grade == 'C'\n"</script><div class="minibutton load" onclick="javascript: loadConsole(example33);">加载</div><br class="clear"></div>
 
     <p>
       <span id="try" class="bookmark"></span>
       <b class="header">Try/Catch/Finally</b>
-      Try/catch statements are just about the same as JavaScript (although
-      they work as expressions).
+      Try/catch语句跟JavaScript近似 (虽然他们利用表达式来工作).
     </p>
     <div class="code"><pre class="idle"><span class="Keyword">try</span>
   allHellBreaksLoose()
@@ -1975,15 +1968,14 @@ grade <span class="Keyword">=</span> (<span class="Storage">function</span>() {
 } <span class="Keyword">finally</span> {
   cleanUp();
 }
-</pre><script>window.example34 = "try\n  allHellBreaksLoose()\n  catsAndDogsLivingTogether()\ncatch error\n  print error\nfinally\n  cleanUp()\n\n"</script><div class="minibutton load" onclick="javascript: loadConsole(example34);">load</div><br class="clear"></div>
+</pre><script>window.example34 = "try\n  allHellBreaksLoose()\n  catsAndDogsLivingTogether()\ncatch error\n  print error\nfinally\n  cleanUp()\n\n"</script><div class="minibutton load" onclick="javascript: loadConsole(example34);">加载</div><br class="clear"></div>
 
     <p>
       <span id="comparisons" class="bookmark"></span>
       <b class="header">Chained Comparisons</b>
-      CoffeeScript borrows
-      <a href="http://docs.python.org/reference/expressions.html#notin">chained comparisons</a>
-      from Python — making it easy to test if a value falls within a
-      certain range.
+      CoffeeScript从Python借用
+      <a href="http://docs.python.org/reference/expressions.html#notin">链比较</a>的法则
+       —当值落于一个明确的范围时便很容易比较.
     </p>
     <div class="code"><pre class="idle">cholesterol <span class="Keyword">=</span> <span class="Number">127</span>
 
@@ -1995,7 +1987,7 @@ healthy <span class="Keyword">=</span> <span class="Number">200</span> <span cla
 cholesterol <span class="Keyword">=</span> <span class="Number">127</span>;
 
 healthy <span class="Keyword">=</span> (<span class="Number">200</span> <span class="Keyword">&gt;</span> cholesterol <span class="Keyword">&amp;</span><span class="Keyword">&amp;</span> cholesterol <span class="Keyword">&gt;</span> <span class="Number">60</span>);
-</pre><script>window.example35 = "cholesterol = 127\n\nhealthy = 200 > cholesterol > 60\n\nalert healthy"</script><div class="minibutton load" onclick="javascript: loadConsole(example35);">load</div><div class="minibutton ok" onclick="javascript: var cholesterol, healthy;
+</pre><script>window.example35 = "cholesterol = 127\n\nhealthy = 200 > cholesterol > 60\n\nalert healthy"</script><div class="minibutton load" onclick="javascript: loadConsole(example35);">加载</div><div class="minibutton ok" onclick="javascript: var cholesterol, healthy;
 
 cholesterol = 127;
 
@@ -2004,10 +1996,9 @@ healthy = (200 &gt; cholesterol &amp;&amp; cholesterol &gt; 60);
 
     <p>
       <span id="strings" class="bookmark"></span>
-      <b class="header">String Interpolation, Block Strings, and Block Comments</b>
-      Ruby-style string interpolation is included in CoffeeScript. Double-quoted
-      strings allow for interpolated values, using <tt>#{ ... }</tt>,
-      and single-quoted strings are literal.
+      <b class="header">字符串插值,块-字符串,和块注释</b>
+      Ruby-style字符串插值是包含在CoffeeScript里的.双引号字符串允许使用<tt>#{ ... }</tt>进行插值,
+     而单引号字符串是插入文字.
     </p>
     <div class="code"><pre class="idle">author <span class="Keyword">=</span> <span class="String"><span class="String">"</span>Wittgenstein<span class="String">"</span></span>
 quote  <span class="Keyword">=</span> <span class="String"><span class="String">"</span>A picture is a fact. -- <span class="String"><span class="String">#{</span> author <span class="String">}</span></span><span class="String">"</span></span>
@@ -2025,7 +2016,7 @@ author <span class="Keyword">=</span> <span class="String"><span class="String">
 quote <span class="Keyword">=</span> <span class="String"><span class="String">"</span>A picture is a fact. -- <span class="String">"</span></span> <span class="Keyword">+</span> author;
 
 sentence <span class="Keyword">=</span> <span class="String"><span class="String">"</span><span class="String">"</span></span> <span class="Keyword">+</span> (<span class="Number">22</span> / <span class="Number">7</span>) <span class="Keyword">+</span> <span class="String"><span class="String">"</span> is a decent approximation of π<span class="String">"</span></span>;
-</pre><script>window.example36 = "author = \"Wittgenstein\"\nquote  = \"A picture is a fact. -- #{ author }\"\n\nsentence = \"#{ 22 / 7 } is a decent approximation of π\"\n\nalert sentence"</script><div class="minibutton load" onclick="javascript: loadConsole(example36);">load</div><div class="minibutton ok" onclick="javascript: var author, quote, sentence;
+</pre><script>window.example36 = "author = \"Wittgenstein\"\nquote  = \"A picture is a fact. -- #{ author }\"\n\nsentence = \"#{ 22 / 7 } is a decent approximation of π\"\n\nalert sentence"</script><div class="minibutton load" onclick="javascript: loadConsole(example36);">加载</div><div class="minibutton ok" onclick="javascript: var author, quote, sentence;
 
 author = &quot;Wittgenstein&quot;;
 
@@ -2034,7 +2025,7 @@ quote = &quot;A picture is a fact. -- &quot; + author;
 sentence = &quot;&quot; + (22 / 7) + &quot; is a decent approximation of π&quot;;
 ;alert(sentence);">run: sentence</div><br class="clear"></div>
     <p>
-      Multiline strings are allowed in CoffeeScript.
+    在CoffeeScript中，允许多行字符串.
     </p>
     <div class="code"><pre class="idle">mobyDick <span class="Keyword">=</span> <span class="String"><span class="String">"</span>Call me Ishmael. Some years ago --</span>
 <span class="String"> never mind how long precisely -- having little</span>
@@ -2047,15 +2038,13 @@ sentence = &quot;&quot; + (22 / 7) + &quot; is a decent approximation of π&quot
 </pre><pre class="idle"><span class="Storage">var</span> mobyDick;
 
 mobyDick <span class="Keyword">=</span> <span class="String"><span class="String">"</span>Call me Ishmael. Some years ago -- never mind how long precisely -- having little or no money in my purse, and nothing particular to interest me on shore, I thought I would sail about a little and see the watery part of the world...<span class="String">"</span></span>;
-</pre><script>window.example37 = "mobyDick = \"Call me Ishmael. Some years ago --\n never mind how long precisely -- having little\n or no money in my purse, and nothing particular\n to interest me on shore, I thought I would sail\n about a little and see the watery part of the\n world...\"\n\nalert mobyDick"</script><div class="minibutton load" onclick="javascript: loadConsole(example37);">load</div><div class="minibutton ok" onclick="javascript: var mobyDick;
+</pre><script>window.example37 = "mobyDick = \"Call me Ishmael. Some years ago --\n never mind how long precisely -- having little\n or no money in my purse, and nothing particular\n to interest me on shore, I thought I would sail\n about a little and see the watery part of the\n world...\"\n\nalert mobyDick"</script><div class="minibutton load" onclick="javascript: loadConsole(example37);">加载</div><div class="minibutton ok" onclick="javascript: var mobyDick;
 
 mobyDick = &quot;Call me Ishmael. Some years ago -- never mind how long precisely -- having little or no money in my purse, and nothing particular to interest me on shore, I thought I would sail about a little and see the watery part of the world...&quot;;
 ;alert(mobyDick);">run: mobyDick</div><br class="clear"></div>
     <p>
-      Block strings can be used to hold formatted or indentation-sensitive text
-      (or, if you just don't feel like escaping quotes and apostrophes). The
-      indentation level that begins the block is maintained throughout, so
-      you can keep it all aligned with the body of your code.
+      块字符串可以用来存放格式化和缩进敏感的文本
+      (或者,如果你只是不喜欢逃避使用引号和撇号).开始块的缩进，可以维持每个块区域的整齐,那么你就可以让你的代码整齐美观.
     </p>
     <div class="code"><pre class="idle">html <span class="Keyword">=</span> <span class="String"><span class="String">"""</span></span>
 <span class="String">       &lt;strong&gt;</span>
@@ -2066,18 +2055,15 @@ mobyDick = &quot;Call me Ishmael. Some years ago -- never mind how long precisel
 </pre><pre class="idle"><span class="Storage">var</span> html;
 
 html <span class="Keyword">=</span> <span class="String"><span class="String">"</span>&lt;strong&gt;<span class="UserDefinedConstant">\n</span>  cup of coffeescript<span class="UserDefinedConstant">\n</span>&lt;/strong&gt;<span class="String">"</span></span>;
-</pre><script>window.example38 = "html = \"\"\"\n       <strong>\n         cup of coffeescript\n       </strong>\n       \"\"\"\n\nalert html"</script><div class="minibutton load" onclick="javascript: loadConsole(example38);">load</div><div class="minibutton ok" onclick="javascript: var html;
+</pre><script>window.example38 = "html = \"\"\"\n       <strong>\n         cup of coffeescript\n       </strong>\n       \"\"\"\n\nalert html"</script><div class="minibutton load" onclick="javascript: loadConsole(example38);">加载</div><div class="minibutton ok" onclick="javascript: var html;
 
 html = &quot;&lt;strong&gt;\n  cup of coffeescript\n&lt;/strong&gt;&quot;;
 ;alert(html);">run: html</div><br class="clear"></div>
     <p>
-      Double-quoted block strings, like other double-quoted strings, allow interpolation.
+     双引号括起来的块字符串跟其他用双引号括起来的字符串一样允许插值.
     </p>
     <p>
-      Sometimes you'd like to pass a block comment through to the generated
-      JavaScript. For example, when you need to embed a licensing header at
-      the top of a file. Block comments, which mirror the syntax for block strings,
-      are preserved in the generated code.
+      有时候你想要让一个块注释通过已经生成的JavaScript.例如,当你想要把一个许可证明标志嵌入到文件的顶部.块注释反映了字符串的语法都是保存在生成的代码中的。
     </p>
     <div class="code"><pre class="idle"><span class="Comment"><span class="Comment">###</span></span>
 <span class="Comment">SkinnyMochaHalfCaffScript Compiler v1.0</span>
